@@ -1,0 +1,51 @@
+﻿@model RSVP_App.Models.GuestRespond
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Hi, write down your info</h1>
+
+</div>
+
+@using (Html.BeginForm())
+{
+
+    @Html.ValidationSummary()
+    <p>Name: </p>
+    @Html.TextBoxFor(x => x.Name)
+    <br />
+    <br />
+
+
+    <p>Email: </p>
+    @Html.TextBoxFor(x => x.Email)
+    <br />
+    <br />
+
+
+    <p>Phone: </p>
+    @Html.TextBoxFor(x => x.Phone)
+    <br />
+    <br />
+
+
+    <p>Will show up? </p>
+
+
+    @Html.DropDownListFor(x => x.Attend, new[] { new SelectListItem()
+                                                    {
+                                                        Text = "Yes, I'm going", Value = bool.TrueString
+                                                    },
+                                                    new SelectListItem()
+                                                    {
+                                                        Text = "Nope", Value = bool.FalseString
+                                                    }
+
+                                               }, "Choose an option")
+    <br />
+    <br />
+
+    <input type="submit" value="Submit RSVP" />
+} 
