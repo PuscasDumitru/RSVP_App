@@ -5,32 +5,35 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Hi, write down your info</h1>
+
 </div>
 
 @using (Html.BeginForm())
 {
 
-    @
+    @Html.ValidationSummary()
     <p>Name: </p>
-    <br />
     @Html.TextBoxFor(x => x.Name)
-
     <br />
+    <br />
+
+
     <p>Email: </p>
-    <br />
     @Html.TextBoxFor(x => x.Email)
-
     <br />
+    <br />
+
+
     <p>Phone: </p>
-    <br />
     @Html.TextBoxFor(x => x.Phone)
-
     <br />
+    <br />
+
+
     <p>Will show up? </p>
 
-    <br />
+
     @Html.DropDownListFor(x => x.Attend, new[] { new SelectListItem()
                                                     {
                                                         Text = "Yes, I'm going", Value = bool.TrueString
@@ -39,9 +42,8 @@
                                                     {
                                                         Text = "Nope", Value = bool.FalseString
                                                     }
-                                                    
+
                                                }, "Choose an option")
-    <br />
     <br />
     <br />
 

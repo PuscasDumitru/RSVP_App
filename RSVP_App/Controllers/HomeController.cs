@@ -23,15 +23,30 @@ namespace RSVP_App.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpPost]
+        public ActionResult Index(GuestRespond guestRespond)
+        {
+            if (ModelState.IsValid)
+            {
+                if (guestRespond.Attend == true)
+                    return RedirectToAction("Thanks");
+
+                else
+                    return View("Sorry");
+            }
+
+            return View(guestRespond);
+        }
+
+        public ActionResult Thanks()
+        {
+            return View();
         }
     }
 }
