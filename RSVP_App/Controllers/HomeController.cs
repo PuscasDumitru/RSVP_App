@@ -53,7 +53,6 @@ namespace RSVP_App.Controllers
                     return RedirectToAction("Thanks");
                 }
 
-
                 else
                     return View("Sorry");
             }
@@ -64,6 +63,9 @@ namespace RSVP_App.Controllers
         public ActionResult Thanks()
         {
             return View();
+
+
+
         }
     }
 }
