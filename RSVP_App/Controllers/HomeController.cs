@@ -63,9 +63,6 @@ namespace RSVP_App.Controllers
         public ActionResult Thanks()
         {
             return View();
-
-
-
         }
     }
 }

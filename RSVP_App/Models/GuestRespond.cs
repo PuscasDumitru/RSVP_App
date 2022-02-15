@@ -8,7 +8,6 @@ namespace RSVP_App.Models
 {
     public class GuestRespond
     {
-
         [Required(ErrorMessage = "Please enter your name")]
         public string Name { get; set; }
 
@@ -20,6 +19,5 @@ namespace RSVP_App.Models
 
         [Required(ErrorMessage = "Please specify whether you will attend")]
         public bool? Attend { get; set; }
-
     }
 }
